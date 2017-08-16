@@ -52,14 +52,13 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
     })
 
-// function to echo back messages - added by Stefan
 
 function sendTextMessage(sender, text) {
     messageData = {
         text:text
         }
     request({
-        url: 'https://graph.facebook.com/v2.6/me/...',
+        url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
         method: 'POST',
         json: {
